@@ -12,13 +12,13 @@ load Android SDK,can get AdView SDK package, including text and
 Demo;
  
 
-***Image to be inserted *** 
+**Image to be inserted **
 1. When open bidding or remnant, if you need to pop-up confirmation
 box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
 “confirm tips” . Ignore it if you don’t need this process.
 
 
-***Image to be inserted ***
+**Image to be inserted **
 
 **Notes : **
 1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
@@ -275,46 +275,37 @@ public final static int NOTIFY_COUNTER_NUM = 1;
 but it will appear only after specified times.
 public final static int NOTIFY_COUNTER_TEXT = 2;
 // Will call this after settings:
-onAdNotifyCustomCallback(Stirng key,ViewGroup view,int
-ruleTime,int delayTime) interface, you can custom
-notification styles
+onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you can custom notification styles
 public final static int NOTIFY_COUNTER_CUSTOM = 3;
-17
-Note:
-For opening advertising please make sure the exposure time is sufficient, oth-
-erwise it will affect the income. You can refer to the code of SpreadScreenActivity
-in AdView Demo Project.
-VIII. Create native advertising
-8.1 create native advertising
+
+**Note:**
+For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdView Demo Project.
+
+##VIII. Create native advertising 
+
+**8.1 create native advertising**
+
 Add a listview to layout file, e.g :
 <ListView
-android:id="@+id/list"
-android:layout_width="match_parent"
-android:layout_height="match_parent" />
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
 Add the following code to your activity:
-//Initialized native ads should custom ad layout in
-advance, and apply native ad ID at app background
-AdViewNativeManager.getInstance(this).requestAd(this,Mai
-nActivity.key2, 2,
-this); //set native callback interface
+
+//Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
+AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.key2, 2,this); 
+//set native callback interface
 @Override
 public void onReceivedAd(String key,List arg0) {
-for (int i = 0; i < arg0.size(); i++) { Data data = new
-Data();
-18
+for (int i = 0; i < arg0.size(); i++) { Data data = newData();
 NativeAdInfo nativeAdInfo = (NativeAdInfo) arg0.get(i);
-data.descript = nativeAdInfo.getDescription(); data.icon
-= nativeAdInfo.getIconUrl();
+data.descript = nativeAdInfo.getDescription(); data.icon = nativeAdInfo.getIconUrl();
 data.title = ((NativeAdInfo) arg0.get(i)).getTitle();
 data.adInfo = (NativeAdInfo) arg0.get(i);
-((NativeAdInfo) arg0.get(i)).getIconHeight(); data.isAd
-= true;
-Log.i("native information ", "data.descript: " +
-data.descript + "\ndata.icon: "
-+ data.icon + "\ndata.title:" + data.title); list.add(3,
-data);
-((NativeAdInfo) arg0.get(i)).onDisplay(new
-View( AdNativeActivity.this));
+((NativeAdInfo) arg0.get(i)).getIconHeight(); data.isAd = true;
+Log.i("native information ", "data.descript: " + data.descript + "\ndata.icon: " + data.icon + "\ndata.title:" + data.title); list.add(3, data);
+((NativeAdInfo) arg0.get(i)).onDisplay(newView( AdNativeActivity.this));
 } }
 /**
 * This function is called when the ad requests failed.
