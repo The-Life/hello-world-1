@@ -7,8 +7,7 @@
 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
 ***Image to be inserted ***
-1. Homepage -> Android SDK download,or APP management -> Down-
-load Android SDK,can get AdView SDK package, including text and
+1. Homepage -> Android SDK download,or APP management -> Download Android SDK,can get AdView SDK package, including text and
 Demo;
  
 
