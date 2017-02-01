@@ -6,24 +6,19 @@
 4. Click “APP management” page→Configure : enter adID in“Not set”, turnon the switch, set the capacity to 100%, click “Save”. If you need more platform, click “Add ad platform”. The cumulative percentage must be
 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
-***Image to be inserted ***
-
 ![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
 
-
 1. Homepage -> Android SDK download,or APP management -> Down-
-load Android SDK,can get AdView SDK package, including text and
-Demo;
- 
+load Android SDK,can get AdView SDK package, including text and Demo;
 
-**Image to be inserted **
+![Homepage-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/II.png) 
 
 1. When open bidding or remnant, if you need to pop-up confirmation
 box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
 “confirm tips” . Ignore it if you don’t need this process.
+![Bidding](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.1.png)
 
-
-**Image to be inserted **
+![bidding-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/III.2.png)
 
 **Notes:**
 
@@ -41,7 +36,7 @@ box twice when click the ad, you can set it as: 1) click “edit”; 2) switch o
 2. Please put AdViewSDK_Android.jar, android-support-v4.jar into your application.
 3. Add other ad platform SDK that App may use in the same way. ( Can only use the jar provided by Adview. Use jar from other channels will make the ad cannot display.
 
-***Image to be inserted ***
+![add SDK](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IV.png)
  
 **Note :**
 
@@ -65,11 +60,10 @@ Required permissions should be added ( complete code please refer to AndroidMani
 
 **Note:**
 
-1.**INTERNET:** allow to visit network (required)
-2.**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
-3.**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
-
-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
+-**INTERNET:** allow to visit network (required)
+-**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
+-**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
+-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
 -**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status
 -**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.
 -**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device
@@ -152,7 +146,7 @@ View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);layo
 
 If you want banner advertisement directly from ad networks use this below configuration accordingly you choosen ad Network.
 
-###insert tabel###
+![Add types of ads](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/V.png)
 
 ##5.2 Ad Banner events handling
 
@@ -206,7 +200,7 @@ AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
 **6.2 Ad Interstitial Event Handling**
 
 To receive events from ad, you should implement an event listener interface AdViewInstlListener.
-**Insert code here **
+
 ```
 public interface AdViewInstlListener {
 /**
@@ -448,7 +442,9 @@ You can refer to the code of AdVideoActivity in AdView Demo Project.
 Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
 
 There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
- ** Insert Image here **
+ 
+ ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
+ 
 
 **10.1 The example that referred code Demo provide is the implementation of Amazon ad; **
 **10.2 Custom function implementation **
@@ -775,29 +771,28 @@ Currently Adview SDK mixed support proguard4.6 version or above, developers can 
 
 Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage
 
-**Insert Image here ** 
+![contact us](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VII.png)
 
 **12.3 How to use sample**
 
 **12.3.1 Upload sample project , method 1**
 
-Process 1
-**Insert Image here ** 
+Process 1 
+![process1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VIII.png)
  
 Process 2
-**Insert Image here ** 
- 
+![process2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/IX.png) 
+ 
 Process 3
-**Insert Image here ** 
- 
+![process3](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/X.png)
+
 Select the sample category in the SDK package
 
 **12.3.2 upload sample project, method 2**
 Process 1
-**Insert Image here ** 
- 
+![process 12.3.2-1](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XI.png)
+
 Process 2
 Select the sample directory in SDK package ,default target is 1.6;
-**Insert Image here ** 
-
+![process 12.3.2-2](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/XII.png)
  
