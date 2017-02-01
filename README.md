@@ -8,7 +8,7 @@
 
 ***Image to be inserted ***
 [Image raw] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
-[Image within] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
+[Image within] (https://github.com/vinith-cit/Images-for-github/blob/master/I.png)
 
 1. Homepage -> Android SDK download,or APP management -> Download Android SDK,can get AdView SDK package, including text and
 Demo;
