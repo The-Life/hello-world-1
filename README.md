@@ -1,5 +1,5 @@
 #Dev Guide Book @Adview
-####**I. Register and configure SDK-KEY**
+##**I. Register and configure SDK-KEY**
 1. Visit AdView website http://www.adview.com and register Adview Account.
 2. Login "My Products" page, select "Publish App”
 3. Select “Android” follow the prompts to complete the relevant information About the application and you will get the sole unique SDK key
@@ -7,14 +7,16 @@
 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
 ***Image to be inserted ***
-[Image raw] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
-[Image within] (https://github.com/vinith-cit/Images-for-github/blob/master/I.png)
+[Image 1] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
+Images-for-github/I.png 
 
-1. Homepage -> Android SDK download,or APP management -> Download Android SDK,can get AdView SDK package, including text and
+1. Homepage -> Android SDK download,or APP management -> Down-
+load Android SDK,can get AdView SDK package, including text and
 Demo;
  
 
 **Image to be inserted **
+
 1. When open bidding or remnant, if you need to pop-up confirmation
 box twice when click the ad, you can set it as: 1) click “edit”; 2) switch on
 “confirm tips” . Ignore it if you don’t need this process.
@@ -22,12 +24,13 @@ box twice when click the ad, you can set it as: 1) click “edit”; 2) switch o
 
 **Image to be inserted **
 
-**Notes : **
+**Notes:**
+
 1. We provide you with SDK that gives you the freedom to choose your favourite advertising agency. Apart from the bidding and remnant ,other ad platforms are third- party. The App key needed should be register and apply from corresponding official website, and then configure them to the corresponding platform at Adview background.
 2. If you are fresher, you don’t know much about ad platform, which ad platform to choose or which ad platform revenue is stable, we suggest you use bidding first.
 3. Bidding and remnant ads need to complement market information at background, and you will not get formal ads until pass reviewed. Before that all are test ads which do not charge.
-4. Switch Only those ads of which platform is switched on will display in the APP.
-5. Capacity Only capacity of which is switched on will be valid. For the request priority of various platform, usually those of high proportion will get the prior request. Switch platform and at the same time adjust ad capacity. For all ads with the status ON, the capacity should be 100, otherwise they cannot be saved correctly.
+4. **Switch** Only those ads of which platform is switched on will display in the APP.
+5. **Capacity** Only capacity of which is switched on will be valid. For the request priority of various platform, usually those of high proportion will get the prior request. Switch platform and at the same time adjust ad capacity. For all ads with the status ON, the capacity should be 100, otherwise they cannot be saved correctly.
 6. For Banner ad, full screen/interstitial , opening screen ,etc, there’s a save button at the bottom of the page. You should click the save button every time you modify a ad format, otherwise the modification is invalid .
 7. **Region optimization:** Region optimization function means mobile phone displays the domestic configured ads when it’s in domestic, while in foreign country it display foreign configured ads to meet the different demands to the maximum extent. When the region optimization function closed, it does not distinguish between home and abroad.
 
@@ -40,37 +43,42 @@ box twice when click the ad, you can set it as: 1) click “edit”; 2) switch o
 ***Image to be inserted ***
  
 **Note :**
+
 1. To integrate Umeng SDK, you need to put the files of umeng_res given in the demo to application res .
 2. To integrate Wiyun SDK, you need to put the files of wiyun_res given in the demo to application res , and add corresponding permissions .
 
 ##III. AndroidManifest.xml text configuration
 
 **3.1 Add permission code**
-Required permissions should be added ( complete code please refer to Android-
-Manifest file in Demo.
 
+Required permissions should be added ( complete code please refer to AndroidManifest file in Demo.
+
+```
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permissionandroid:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permissionandroid:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permissionandroid:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permissionandroid:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permissionandroid:name="android.permission.READ_EXTERNAL_STORAGE"/>
+```
 
 **Note:**
-**INTERNET:** allow to visit network (required)
-**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
-**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
-**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status
-**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.
-**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device
+
+-**INTERNET:** allow to visit network (required)
+-**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
+-**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
+-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
+-**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status
+-**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.
+-**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device
 
 
-##3.2 Add Activity declaration
+**3.2 Add Activity declaration**
 
-Some platform need to declare activity to work normal. Declaration is contained in application label, more details please refer to AndroidManifest in Demo.
+Some platform need to declare activity to work normal. Declaration is contained in application label, more details please refer to AndroidManifest in Demo. 
 
 **Configurations that bidding ads should add:**
+```
 <service android:name="com.kyview.DownloadService" />
 <activity android:name="com.kyview.AdviewWebView" />
 <activity android:name="com.kyview.AdActivity" />
@@ -80,13 +88,17 @@ android:name="com.kuaiyou.video.vast.activity.VASTAdActi
 vity" android:hardwareAccelerated="true"
 android:screenOrientation="landscape"/>
 <activityandroid:name="com.kuaiyou.video.AdviewWebView"/>
+```
 
 ##IV. Acquire ad configurations
+
 **Note:**
+
 1. InitConfiguration serve for the overall procedure, just need to transfer once only.
 2. The set method s above are optional, not required.
 3. From 3.2.4 version, SDK supports setting up multiple ad slots (SDK-KEY) in one application. Take 3 ad slots of demo keyset for example, some APP would like to set different ad slots in multiple Activities, thus to statistic the user visit amount of each Activity based on the amount of ad display. If one ad slot can meet the demand of APP, then there’s no need to apply multiple ad slots.
 
+```
 // Be sure to initialize before requesting ads, otherwise the ads cannot be used
 // set ad request configured parameter,
 //you can use default configuration : InitConfiguration. createDefault(this);
@@ -108,25 +120,32 @@ AdViewBannerManager.getInstance(this).init(initConfig,MainActivity.keySet);
 AdViewInstlManager.getInstance(this).init(initConfig,MainActivity.keySet);
 AdViewNativeManager.getInstance(this).init(initConfig,MainActivity.keySet);
 AdViewSpreadManager.getInstance(this).init(initConfig,MainActivity.keySet);
+```
 
 ##V. Create banner advertising
 
 **5.1 Add ads through adding code**
+
 Add a banner code to layout file,
+```
 <LinearLayout
       android:id="@+id/ad_view"
       android:layout_width="match_parent"
       android:layout_height="150dp"
       android:gravity="center_horizontal" />
+```
 
-**Add the following code to your activity:**
+Add the following code to your activity:
 
+```
 // request banner ads after initialization
 AdViewBannerManager.getInstance(this).requestAd(this,key, this);
 // Gets the currently requested banner View?upload it to your own layout.
 View view = AdViewBannerManager.getInstance(this).getAdViewLayout(this,key);layout.addView(view);
+```
 
 **Increase part of the platform size Interface:**
+
 **Note:**
 
 If you want banner advertisement directly from ad networks use this below configuration accordingly you choosen ad Network.
@@ -134,9 +153,11 @@ If you want banner advertisement directly from ad networks use this below config
 ###insert tabel###
 
 ##5.2 Ad Banner events handling
+
 To receive events from ad, you should implement an event listener interface AdViewBannerListener.
+
+```
 public interface AdViewBannerListener{
-11
 /**
 * Use this function when the ad is clicked
 */
@@ -159,30 +180,39 @@ public void onAdFailed(String key);
 */
 public void onAdReady(String key);
 }
+```
 
 **Note:**
 You can refer to the code of AdBannerActivity in AdView Demo Project.
 
 ##VI. Create interstitial advertising
+
 **6.1 create interstitial**
+
 **Note:**
+
 Since interstitial ad has a certain life cycle, Please do not wait too long after the request to call the screen display method, so as to avoid advertising invalid
 
 Add the following code to your activity:
+
+```
 // interstitial ad request after initialization, ad request and display, used alone
 AdViewInstlManager.getInstance(this).requestAd(this,MainActivity.key2);
 // After ad request succeed , call the display ad AdViewInstlManager.getInstance(this).showAd(this,MainActivity.key2);
+```
 
 **6.2 Ad Interstitial Event Handling**
+
 To receive events from ad, you should implement an event listener interface AdViewInstlListener.
 **Insert code here **
+```
 public interface AdViewInstlListener {
 /**
 * Use this function when the ad is clicked
 */
 public void onAdClick(String key);
 /**
-13
+
 * Use this function when the ad is displayed
 */
 public void onAdDisplay(String key);
@@ -200,9 +230,11 @@ public void onAdReceived(String key);
 */
 public void onAdFailed (String key);
 }
+```
 
 **6.3 Create custom style interstitial**
 
+```
 // You need to set the user-managed mode when initialization, and you must manually call the display
 after the setting InitConfiguration.setInstlControlMode(InstlControlMode.USERCONTROL);
 // request interstitial ads after initialization 
@@ -214,6 +246,7 @@ AdViewInstlManager.getInstance(this).getInstlView (key);
 AdViewInstlManager.getInstance(this).reportImpression(key);
 // When the ad is clicked, the click event handling method should be called ,otherwise there will no response(required)
 AdViewInstlManager.getInstance(this).reportClick(key);
+```
 
 **Note:**
 You can refer to the code of AdInstlActivity in AdView Demo Project.
@@ -222,6 +255,7 @@ You can refer to the code of AdInstlActivity in AdView Demo Project.
 
 **7.1 Create opening screen ad**
 
+```
 // Set the logo at the bottom of opening screen (not required), you can also upload local images or images link.
 AdViewSpreadManager.getInstance(this).setSpreadLogo(R.drawable.spread_logo);
 // Set background color of opening screen( not required)
@@ -229,10 +263,13 @@ AdViewSpreadManager.getInstance(this).setSpreadBackgroudColor( Color.WHITE);
 // Request opening screen ads
 AdViewSpreadManager.getInstance(this).request(this,MainActivity.key2, (RelativeLayout) findViewById(R.id.spreadlayout), this);
 
+```
+
 **7.2 Ad Opening screen Event Handling**
 
 To receive events from ad, you should implement an event listener interface AdViewSpreadListener.
 
+```
 public interface AdViewSpreadListener {
 /**
 * This function is called when the ad is displayed.
@@ -263,9 +300,11 @@ public void onAdClose(String key);
 public void onAdNotifyCustomCallback(String
 key,ViewGroup view,int ruleTime,int delayTime);
 }
+```
 
 **7.3 Custom countdown notification style on the top of opening screen**
 
+```
 // Skip button will appears on the top after settings
 AdViewSpreadManager.getInstance(this).setSpreadNotifyTyp
 e(this, AdSpreadManager.NOTIFY_COUNTER_NUM);
@@ -279,8 +318,10 @@ public final static int NOTIFY_COUNTER_TEXT = 2;
 // Will call this after settings:
 onAdNotifyCustomCallback(String key,ViewGroup view,intruleTime,int delayTime) interface, you can custom notification styles
 public final static int NOTIFY_COUNTER_CUSTOM = 3;
+```
 
 **Note:**
+
 For opening advertising please make sure the exposure time is sufficient, otherwise it will affect the income. You can refer to the code of SpreadScreenActivity in AdView Demo Project.
 
 ##VIII. Create native advertising 
@@ -288,13 +329,17 @@ For opening advertising please make sure the exposure time is sufficient, otherw
 **8.1 create native advertising**
 
 Add a listview to layout file, e.g :
+
+```
 <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+```
 
 Add the following code to your activity:
 
+```
 //Initialized native ads should custom ad layout in advance, and apply native ad ID at app background
 AdViewNativeManager.getInstance(this).requestAd(this,MainActivity.key2, 2,this); 
 //set native callback interface
@@ -323,10 +368,12 @@ the status of current downloading contents.
 public void onAdStatusChanged (int arg0) {
 }
 });
-19
-8.2 Ad Native Event Handling
-To receive events from ad, you should implement an event listener interface Ad-
-ViewNativeListener.
+```
+
+**8.2 Ad Native Event Handling**
+To receive events from ad, you should implement an event listener interface AdViewNativeListener.
+
+```
 public interface AdViewNativeListener {
 /**
 * This function is called when the ad request
@@ -343,21 +390,29 @@ public void onAdReceived(String key);
 */
 public void onAdStatusChanged (String key ,int
 status);
-IX. Create video advertising
-9.1 create video advertising
+
+```
+
+##IX. Create video advertising
+**9.1 create video advertising**
+
 Add the following code in activity,
-20
+
+```
 //Request video ads after initialization. Request and
 display ads should be used separately.
 AdViewVideoManager.getInstance(this).requestAd(this,Main
 Activity.key3,this);
 //set video callback interface
 // Call display ad after ad request succeed.
-AdViewVideoManager.getInstance(this).playVideo(this,
-MainActivity.key3);
-9.2 Ad Video Event Handling
-To receive events from ad, you should implement an event listener interface Ad-
-ViewVideoListener.
+AdViewVideoManager.getInstance(this).playVideo(this,MainActivity.key3);
+```
+
+**9.2 Ad Video Event Handling**
+
+To receive events from ad, you should implement an event listener interface AdViewVideoListener.
+
+```
 public interface AdViewVideoListener{
 /**
 * Play start event notification
@@ -374,26 +429,28 @@ public void onAdClose(String key);
 /**
 * Request succeed notification
 */
-21
+
 public void onAdReceived(String key);
 /**
 * Request failed notification
 */
 public void onAdFailed (String key); }
-Note:
+```
+
+**Note:**
+
 You can refer to the code of AdVideoActivity in AdView Demo Project.
-X. Add custom ad platform
-Sometimes developers would like to add a platform which is not aggregated, Ad-
-view provide ways to meet this demand.
-There’s a “Custom ad platform” in add ad platform . Developer needs to fill in
-app ID1, this is the name of a function which needs client side to complete. The
-function of this function is to call the ad platform interface . As for App ID2, just fill
-in something, otherwise you cannot save it.
- 
-22
-10.1 The example that referred code Demo provide is
-the implementation of Amazon ad;
-10.2 Custom function implementation
+
+##X. Add custom ad platform
+
+Sometimes developers would like to add a platform which is not aggregated, Adview provide ways to meet this demand.
+
+There’s a “Custom ad platform” in add ad platform . Developer needs to fill in app ID1, this is the name of a function which needs client side to complete. The function of this function is to call the ad platform interface . As for App ID2, just fill in something, otherwise you cannot save it.
+ ** Insert Image here **
+
+**10.1 The example that referred code Demo provide is the implementation of Amazon ad; **
+**10.2 Custom function implementation **
+```
 // you can visit https://developer.amazon.com/sdk/
 mobileads.html
 // Must with: final AdViewAdapter adapter, final String
@@ -447,49 +504,58 @@ getAdViewLayout(AdBannerActivity.this,
 key), adView, key); AdTargetingOptions adOptions = new
 AdTargetingOptions(); adView.loadAd(adOptions);
 }
-XI. Appointed app channel
+
+```
+
+##XI. Appointed app channel
 Developers add the above content in the Mainfest files:
+```
 <meta-data android:name="AdView_CHANNEL" android:value=“GFAN">
-</meta-data>;
+</meta-data>
+
+```
+
 (must mark when upload ,otherwise will not pass review);
 AdViewTargeting.setChannel, the former interface has been invalid;
-24
 Currently the channels that Adview support are as follow:
-EOE(????)
-GOOGLEMARKET(????? ?)
-APPCHINA(???)
-HIAPK(????)
-GFAN(??)
-GOAPK(??)
-NDUOA(N??)
-91Store(??91)
-LIQUCN(??)
-WAPTW(??)
-ANDROIDCN(? ???)
-GGDWON(G??)
-ANDROIDAI(????)
-STARANDROID(????)
-ANDROIDD(??)
-YINGYONGSO(???)
-IMOBILE(????)
-SOUAPP(? ??)
-MUMAYI(???)
-MOBIOMNI(??)
-PAOJIAO(???)
-AIBALA(?????)
-COOLAPK(???)
-ANFONE(??)
-APKOK(???)
-360MARKET(360??)
-25
-If there’s no configuration or configure other value, all seemed as “OTHER”;
-There are links to various markets in Mobile Ads (http://t.adview.cn/);
-XII. Frequently Asked Questions
-12.1 What if an application wants to mix (ProGuard)?
-AdView is dynamically call, it does not have to mix. Advertising agency code has
-been independently mixed, if you need to mixed your own code, you can add the
-following content at the beginning of the file proguard.cfg. More details please re-
-fer to the code in sample. ( The below code can be copied in the sample)
+
+      -EOE(????)
+      -GOOGLEMARKET(????? ?)
+      -APPCHINA(???)
+      -HIAPK(????)
+      GFAN(??)
+      GOAPK(??)
+      NDUOA(N??)
+      91Store(??91)
+      LIQUCN(??)
+      WAPTW(??)
+      ANDROIDCN(? ???)
+      GGDWON(G??)
+      ANDROIDAI(????)
+      STARANDROID(????)
+      ANDROIDD(??)
+      YINGYONGSO(???)
+      IMOBILE(????)
+      SOUAPP(? ??)
+      MUMAYI(???)
+      MOBIOMNI(??)
+      PAOJIAO(???)
+      AIBALA(?????)
+      COOLAPK(???)
+      ANFONE(??)
+      APKOK(???)
+      360MARKET(360??)
+
+If there’s no configuration or configure other value, all seemed as “OTHER”; There are links to various markets in Mobile Ads (http://t.adview.cn/);
+
+##XII. Frequently Asked Questions
+
+**12.1 What if an application wants to mix (ProGuard)?**
+
+AdView is dynamically call, it does not have to mix. Advertising agency code has been independently mixed, if you need to mixed your own code, you can add the following content at the beginning of the file proguard.cfg. More details please refer to the code in sample. 
+( The below code can be copied in the sample)
+
+```
 #The below is used for AdView SDK settings,only instead
 for your app
 -dontwarn
@@ -698,31 +764,38 @@ com.easou.ecom.mads.**
 31
 }
 -keep class cn.pro.ad.sdk.*
-Currently Adview SDK mixed support proguard4.6 version or above, developers
-can go to the proguard official website http://sourceforge.net/ projects/proguard/
-files/proguard/ to download 4.6 version or above. If you want to upgrade, just re-
-place the downloaded version with “android-sdk- windowstoolsproguard”
-12.2 Contact us
-Users can login Adview, there are service E-mail, service contact number and enter-
-prise QQ customer service at the bottom of the homepage
- 
-12.3 How to use sample
-12.3.1 Upload sample project , method 1
+
+```
+
+Currently Adview SDK mixed support proguard4.6 version or above, developers can go to the proguard official website http://sourceforge.net/ projects/proguard/ files/proguard/ to download 4.6 version or above. If you want to upgrade, just replace the downloaded version with “android-sdk- windowstoolsproguard”
+
+**12.2 Contact us**
+
+Users can login Adview, there are service E-mail, service contact number and enterprise QQ customer service at the bottom of the homepage
+
+**Insert Image here ** 
+
+**12.3 How to use sample**
+
+**12.3.1 Upload sample project , method 1**
+
 Process 1
-32
+**Insert Image here ** 
  
 Process 2
-33
+**Insert Image here ** 
  
 Process 3
-34
+**Insert Image here ** 
  
 Select the sample category in the SDK package
-12.3.2 upload sample project, method 2
+
+**12.3.2 upload sample project, method 2**
 Process 1
-35
+**Insert Image here ** 
  
 Process 2
 Select the sample directory in SDK package ,default target is 1.6;
-36
+**Insert Image here ** 
+
  
