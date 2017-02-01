@@ -8,7 +8,7 @@
 
 ***Image to be inserted ***
 
-[![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)](#features)
+[![Home page](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)]
 
 
 1. Homepage -> Android SDK download,or APP management -> Down-
