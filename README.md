@@ -7,7 +7,10 @@
 100%.you can use AdView Auction Ads. Generally recommended number of platforms is 1-3.
 
 ***Image to be inserted ***
-[Image 1] (https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)
+[Image 1] ()
+[![solarized dualmode](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/I.png)](#features)
+
+
 Images-for-github/I.png 
 
 1. Homepage -> Android SDK download,or APP management -> Down-
