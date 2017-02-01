@@ -447,11 +447,10 @@ There’s a “Custom ad platform” in add ad platform . Developer needs to fil
  ![custom ad platform](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/VI.png)
  
 
+ **10.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
 
-**10.1 The example that referred code Demo provide is the implementation of Amazon ad; **                                               
-
-**10.2 Custom function implementation **                                                                                                 
-
+ **10.2 Custom function implementation **                                                                                                
+ 
 ```
 // you can visit https://developer.amazon.com/sdk/
 mobileads.html
