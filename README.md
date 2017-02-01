@@ -60,13 +60,14 @@ Required permissions should be added ( complete code please refer to AndroidMani
 
 **Note:**
 
--**INTERNET:** allow to visit network (required)
--**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)
--**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.
--**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)
--**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status
--**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.
--**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device
+-**INTERNET:** allow to visit network (required)                                                                                         
+-**ACCESS_NETWORK_STATE:** allow to visit various status of mobile phone (required)                                                     
+-**ACCESS_COARSE_LOCATION**: allow a procedure to visit CellID or WIFI to get the rough position.                                       
+-**ACCESS_FINE_LOCATION:** allow a procedure to visit the accurate position (for example, GPS)                                           
+-**ACCESS_WIFI_STATE:** allow a procedure to visit WIFI status                                                                           
+-**WRITE_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device and can cache ads.                                       
+-**READ_EXTERNAL_STORAGE:** allow a procedure to visit outside storage device                                                           
+
 
 
 **3.2 Add Activity declaration**
