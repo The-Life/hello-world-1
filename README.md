@@ -152,8 +152,23 @@ If you want banner advertisement directly from ad networks use this below config
 | Platform | Constant | examples |
 | --- | --- | --- |
 | InMobi | INMOBI_AD_UNIT_728x90 |
-|        | ABSC - SECOND LINVE |     
-| git diff | Show file differences that haven't been staged |
+| InMobi | INMOBI_AD_UNIT_728x90
+INMOBI_AD_UNIT_468x60
+INMOBI_AD_UNIT_320x50 | InitConfiguration.setAdInMobiSize(AdI
+nMobiSize. .INMOBI_AD_UNIT_320x50); |
+| AdMob | BANNER
+LARGE_BANNER
+MEDIUM_RECTANGLE
+FULL_BANNER
+LEADERBOARD
+SMART_BANNER | InitConfiguration.setAdMobSize(AdMobS
+ize.BANNER); | 
+| Adview Bidding, remnant| BANNER_AUTO_FILL
+BANNER_SMART
+BANNER_320X50
+BANNER_480X75
+BANNER_728X90 | InitConfiguration.setAdSize(AdSize.BA
+NNER_SMART); | 
 
 ##5.2 Ad Banner events handling
 
