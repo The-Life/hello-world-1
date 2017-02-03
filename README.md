@@ -149,6 +149,12 @@ If you want banner advertisement directly from ad networks use this below config
 
 ![Add types of ads](https://raw.githubusercontent.com/vinith-cit/Images-for-github/master/V.png)
 
+| Platform | Constant | examples |
+| --- | --- | --- |
+| InMobi | INMOBI_AD_UNIT_728x90 |
+|        | ABSC - SECOND LINVE |     
+| git diff | Show file differences that haven't been staged |
+
 ##5.2 Ad Banner events handling
 
 To receive events from ad, you should implement an event listener interface AdViewBannerListener.
